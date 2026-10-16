@@ -1,25 +1,15 @@
-# Alpha Profile List
+# Alpha Profile List — Ultimate Edition
 
-A lightweight, responsive profile directory powered entirely by `Profiles.txt`.
+A lightweight, mobile-first profile directory powered by `Profiles.txt`.
 
 ## Files
+- `index.html` — minimal page structure
+- `style.css` — black, red, and purple styling with circular profile media
+- `script.js` — profile parsing, search, URL handling, and image/video support
+- `Profiles.txt` — profile data
 
-- `index.html` — page structure
-- `style.css` — responsive dark cyber-luxury styling
-- `script.js` — text parser, search, link handling, image/video rendering
-- `Profiles.txt` — profile data; edit this file to add, remove, or update profiles
-
-## Add or edit a profile
-
-Each entry contains a separator line, then exactly three non-empty lines:
-
-1. Profile name
-2. Profile media URL (image or video)
-3. Profile page URL
-
-Finish each entry with another separator line. The separator is a single `$` character on its own line. Keep each field on its own line. Blank lines are allowed.
-
-Example:
+## Add or edit profiles
+Each profile entry uses a line containing only `$`, followed by three lines: profile name, media URL, and profile page URL. End the entry with another `$` line.
 
 ```text
 $
@@ -29,16 +19,6 @@ https://owner.github.io/repository/
 $
 ```
 
-## Link compatibility
+Media URLs can be direct raw GitHub links or regular GitHub `/blob/` links. `/blob/` links are automatically converted to raw media links for profile photos/videos. Image formats such as PNG, JPG, JPEG, GIF, WebP, and supported video URLs work when publicly accessible. Video avatars are muted, looping, and inline.
 
-- Direct raw GitHub media URLs are supported.
-- Normal GitHub file links containing `/blob/` are automatically converted to raw media URLs when used in the media field.
-- Ordinary direct image URLs and video URLs are supported.
-- Profile page URLs are opened as links and are not converted.
-- Common video file extensions such as MP4, WebM, OGG, MOV, and M4V are displayed as muted, looping inline videos.
-
-## Publish on GitHub Pages
-
-Upload all four files to the same folder/repository and enable GitHub Pages. `Profiles.txt` must be in the same directory as `index.html`. The page needs to be served over HTTP/HTTPS; opening `index.html` directly as a local file may prevent the browser from fetching `Profiles.txt`.
-
-If an image URL is private, unavailable, or points to a page that blocks direct media access, the card shows a fallback initial. The site cannot make private or inaccessible media public.
+Upload all files to the same repository folder and enable GitHub Pages. `Profiles.txt` must sit beside `index.html`. The search control is a small icon at the top-right and expands when tapped. Profile images are displayed in circular frames.

@@ -4,6 +4,8 @@
   const grid = document.getElementById('profiles');
   const search = document.getElementById('search');
   const clearButton = document.getElementById('clear-search');
+  const searchToggle = document.getElementById('search-toggle');
+  const searchWrap = document.getElementById('search-wrap');
   const count = document.getElementById('count');
   const status = document.getElementById('status');
   const empty = document.getElementById('empty');
@@ -189,6 +191,14 @@
     }
   }
 
+  searchToggle.addEventListener('click', () => {
+    const opening = searchWrap.hidden;
+    searchWrap.hidden = !opening;
+    searchToggle.setAttribute('aria-expanded', String(opening));
+    searchToggle.setAttribute('aria-label', opening ? 'Close profile search' : 'Open profile search');
+    if (opening) search.focus();
+    else { search.value = ''; render(); }
+  });
   search.addEventListener('input', render);
   clearButton.addEventListener('click', () => { search.value = ''; render(); search.focus(); });
   retry.addEventListener('click', loadProfiles);
