@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#08090c">
+  <title>Alpha · Profile Universe</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="ambient ambient-one" aria-hidden="true"></div>
+  <div class="ambient ambient-two" aria-hidden="true"></div>
+  <header class="topbar">
+    <a class="brand" href="./" aria-label="Profile Universe home"><span class="brand-mark">A</span><span>PROFILE UNIVERSE</span></a>
+    <span class="count" id="count">Loading profiles…</span>
+  </header>
+  <main class="main">
+    <section class="intro">
+      <p class="eyebrow">ONE UNIVERSE · MANY IDENTITIES</p>
+      <h1>Profiles<span>.</span></h1>
+      <p class="subheading">Explore the collection.</p>
+    </section>
+    <section class="controls" aria-label="Search profiles">
+      <label class="search-wrap"><span class="search-icon" aria-hidden="true">⌕</span><input id="search" type="search" placeholder="Search profiles by name…" autocomplete="off" spellcheck="false"><button id="clear-search" type="button" aria-label="Clear search" hidden>×</button></label>
+      <p class="status" id="status" aria-live="polite">Loading profile list…</p>
+    </section>
+    <section class="grid" id="profiles" aria-label="Profiles"></section>
+    <div class="empty" id="empty" hidden><span class="empty-mark">∅</span><h2>No matching profiles</h2><p>Try another name or clear the search.</p></div>
+    <div class="error" id="error" hidden><h2>Could not load Profiles.txt</h2><p>Make sure the text file is uploaded beside index.html and that the site is served over HTTP/HTTPS (such as GitHub Pages).</p><button id="retry" type="button">Try again</button></div>
+  </main>
+  <footer><span>PROFILE UNIVERSE</span><span>Simple text-file powered directory</span></footer>
+  <script src="script.js"></script>
+</body>
+</html>
